@@ -23,7 +23,7 @@ public class ClientDetailsImpl implements ClientDetails
     private Integer refreshTokenValiditySeconds;
     private Set<Authority> authorities;
 
-    void setClient(Client client)
+    public void setClient(Client client)
     {
         this.clientId = client.getClientId();
         this.clientSecrete = client.getSecrete();
