@@ -26,6 +26,8 @@ public class UserDetailsImpl implements UserDetails
         this.username = user.getUserId();
         this.password = user.getUserPwd();
 
+        this.credentialsNonExpired = user.getIsDeleted().equals("N");
+
         authorities = new ArrayList<Role>();
         Role roleTmp = new Role("ROLE_USER");
         authorities.add(roleTmp);

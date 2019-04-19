@@ -32,13 +32,16 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter
     @Override
     protected void configure(HttpSecurity http) throws Exception
     {
+        // CSRF
+        http.csrf().disable();
+
+        // Log out
+        http.logout().permitAll();
+
         http.authorizeRequests()
                 .requestMatchers(CorsUtils::isPreFlightRequest).permitAll()
-                //.antMatchers(HttpMethod.OPTIONS, "/oauth/token").permitAll()
                 .antMatchers("/status").permitAll()
-                .anyRequest().authenticated()
-                .and()
-                .csrf().disable()
-                .logout().permitAll();
+                .antMatchers("/userInfo").permitAll()
+                .anyRequest().authenticated();
     }
 }
