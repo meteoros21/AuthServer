@@ -27,7 +27,7 @@ spring:
   profiles: local
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/mycloud?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
+    url: jdbc:mysql://localhost:3306/mycloud?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false&autoReconnection=true
     username: mycloud
     password: 1111
 
@@ -48,7 +48,7 @@ spring:
   profiles: demo
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://mycloud.cd0oe5pce9m5.ap-northeast-2.rds.amazonaws.com:3306/mycloud?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false
+    url: jdbc:mysql://mycloud.cd0oe5pce9m5.ap-northeast-2.rds.amazonaws.com:3306/mycloud?characterEncoding=UTF-8&serverTimezone=UTC&useSSL=false&autoReconnection=true
     username: root
     password: qkrtjdgh21
 

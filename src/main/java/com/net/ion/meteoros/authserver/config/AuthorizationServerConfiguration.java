@@ -129,8 +129,6 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
         tokenServices.setSupportRefreshToken(true);
         tokenServices.setClientDetailsService(clientDetailsService);
         tokenServices.setTokenEnhancer(accessTokenConverter());
-        tokenServices.setAccessTokenValiditySeconds(30);
-        tokenServices.setRefreshTokenValiditySeconds(2592000);
         return tokenServices;
     }
 
